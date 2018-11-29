@@ -2,31 +2,35 @@
 #include "Janela.h"
 #include "Circulo.h"
 #include "Linha.h"
+#include "ArvoreBinaria.h"
 #define VERDE RGB(0,255,0)
 
 int main() {
 
 	Janela janela;
 	HWND janelaId;
-	FILE* ficheiro;
-	int nnos;
-	char filename[] = { "Mapa.txt" };
-	ficheiro = fopen(filename,"r");
-	fscanf(ficheiro,"%d",&nnos);
-	int nos;
-	nos = new int[nnos];
+	
 
 	if (janela.Criar("Minha Janela")) {
 		if ((janelaId = janela.ObterId()) != NULL) {
 
-			Ponto centro(100,100), p2(200,200);
-			Linha linha(centro, p2);
-			linha.desenhar(janelaId, RGB(0, 0, 0));
+			FILE* ficheiro;
+			int nnos;
+			char filename[] = { "Mapa.txt" };
+			ficheiro = fopen(filename, "r");
+			fscanf(ficheiro, "%d", &nnos);
+			int* nos;
+			nos = new int[nnos];
+			ArvoreBinaria arvore;
 
-			Circulo circ(centro, 30, 1906), circ2(p2, 55, 15);
-			circ2.desenhar(janelaId, VERDE);
-			circ.desenhar(janelaId, VERDE);
-
+			int xcoord, ycoord;
+			double val;
+			Ponto centro(0,0);
+			for (int i = 0; i < nnos; i++) {
+				fscanf(ficheiro, "%d%d%f", xcoord, ycoord, val);
+				arvore.Inserir(i, val);
+				Circulo circ(centro.AtribuirXY(xcoord,ycoord),20,val);
+			}
 			MSG msg;
 			while (GetMessage(&msg, 0, 0, 0)) {
 				DispatchMessage(&msg);
