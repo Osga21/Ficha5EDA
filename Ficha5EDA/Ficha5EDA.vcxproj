@@ -115,6 +115,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circulo.cpp" />
+    <ClCompile Include="Linha.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Ponto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Circulo.h" />
+    <ClInclude Include="Linha.h" />
+    <ClInclude Include="ponto.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Mapa.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
