@@ -116,14 +116,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circulo.cpp" />
+    <ClCompile Include="janela.cpp" />
     <ClCompile Include="Linha.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ponto.cpp" />
+    <ClCompile Include="rectangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circulo.h" />
+    <ClInclude Include="janela.h" />
     <ClInclude Include="Linha.h" />
     <ClInclude Include="ponto.h" />
+    <ClInclude Include="rectangulo.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Mapa.txt" />

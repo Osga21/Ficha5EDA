@@ -4,6 +4,16 @@
 
 Circulo::Circulo()
 {
+	raio = 0;
+	valor = 0;
+	centro.AtribuirXY(0, 0);
+}
+
+Circulo::Circulo(Ponto c, int r, int v)
+{
+	raio = r;
+	valor= v;
+	centro.AtribuirXY(c.obterX(), c.obterY());
 }
 
 

@@ -27,6 +27,12 @@
     <ClCompile Include="Ponto.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="janela.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rectangulo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Linha.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ponto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="janela.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rectangulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
