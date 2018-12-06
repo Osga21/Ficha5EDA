@@ -23,14 +23,18 @@ int main() {
 			nos = new int[nnos];
 			ArvoreBinaria arvore;
 
+			Circulo *pnos;
+			pnos = new Circulo[nnos];
 			int xcoord, ycoord;
 			double val;
-			Ponto centro(0,0);
 			for (int i = 0; i < nnos; i++) {
-				fscanf(ficheiro, "%d%d%f", xcoord, ycoord, val);
-				arvore.Inserir(i, val);
-				Circulo circ(centro.AtribuirXY(xcoord,ycoord),20,val);
+				fscanf(ficheiro, "%d, %d, %lf", &xcoord,&ycoord,&val);
+				pnos[i]=Circulo(Ponto(xcoord,ycoord),20,val);
+				pnos[i].desenhar(janelaId, VERDE);
+
+				
 			}
+
 			MSG msg;
 			while (GetMessage(&msg, 0, 0, 0)) {
 				DispatchMessage(&msg);

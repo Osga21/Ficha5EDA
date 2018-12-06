@@ -24,9 +24,17 @@ No* ArvoreBinaria::Pesquisar(No* no, double valor)
 		return no;
 }
 
-void ArvoreBinaria::Inserir (double valor)
+void ArvoreBinaria::Inserir(No* &no,double valor,int pos,int pai)
 {
-	Inserir(raiz, valor);
+	pai = no->pos;
+	if (no == NULL)
+		no = new No(valor, pos, pai);
+	else if (valor < no->valor)
+		Inserir(no->menor, valor, pos, pai);
+	else if (valor > no->valor)
+		Inserir(no->maior, valor, pos, pai);
+	else;
+
 }
 
 void ArvoreBinaria::Inserir(No* &no, double valor)
@@ -107,3 +115,4 @@ void ArvoreBinaria::listarPosOrdem(No *no)
 	listarPosOrdem(no->maior);
 	printf("%.0f\n", no->valor);
 }
+
